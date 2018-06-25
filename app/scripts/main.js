@@ -76,16 +76,16 @@ function initialiseUI() {
 
 function updateBtn() {
   if (Notification.permission === 'denied') {
-    pushButton.textContent = 'Push Messaging Blocked.';
+    pushButton.textContent = '푸쉬 메시지 차단';
     pushButton.disabled = true;
     updateSubscriptionOnServer(null);
     return;
   }
 
   if (isSubscribed) {
-    pushButton.textContent = 'Disable Push Messaging';
+    pushButton.textContent = '푸쉬알람 비활성화';
   } else {
-    pushButton.textContent = 'Enable Push Messaging';
+    pushButton.textContent = '푸쉬알람 활성화';
   }
 
   pushButton.disabled = false;
@@ -143,5 +143,5 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
   });
 } else {
   console.warn('Push messaging is not supported');
-  pushButton.textContent = 'Push Not Supported';
+  pushButton.textContent = '푸쉬알람 사용불가능';
 }
